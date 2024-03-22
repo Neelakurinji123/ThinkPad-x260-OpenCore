@@ -1,8 +1,8 @@
-<h1 align="center">macOS Ventura on ThinkPad X230i</h1>
+<h1 align="center">macOS Ventura on ThinkPad X260</h1>
 
 
 #### I am not responsible for any damages you may cause.
-![Screenshot from my X230i running Ventura!](Screenshot-ventura.png)
+![Screenshot from my X260 running Ventura!](Screenshot-ventura.png)
 
 
 
@@ -19,18 +19,18 @@
 | Feature                              | Status | Dependency          |
 | :----------------------------------- | ------ | ------------------- |
 | Full Graphics Accleration (QE/CI)    | ✅   | `WhateverGreen.kext`  |
-| Audio Recording                      | ✅   | `AppleALC.kext` with Layout ID = 55 and `SSDT-HPET.aml`   |
-| Audio Playback                       | ✅   | `AppleALC.kext` with Layout ID = 55 and `SSDT-HPET.aml`   |
-| Automatic Headphone Output Switching | ✅   | `AppleALC.kext` with Layout ID = 55 and `SSDT-HPET.aml`   |
-| Dock Audio Port                      | ✅   | `AppleALC.kext` with Layout ID = 55 and `SSDT-HPET.aml`   |
+| Audio Recording                      | ✅   | `AppleALC.kext` and `SSDT-HPET.aml`   |
+| Audio Playback                       | ✅   | `AppleALC.kext` and `SSDT-HPET.aml`   |
+| Automatic Headphone Output Switching | ✅   | `AppleALC.kext` and `SSDT-HPET.aml`   |
+| Dock Audio Port                      | ✅   | `AppleALC.kext` and `SSDT-HPET.aml`   |
 
 > ### Power, Charge, Sleep and Hibernation
 
 | Feature                              | Status | Dependency          |
 | :----------------------------------- | ------ | ------------------- |
 | Battery Percentage Indication        | ✅   | `ECEnabler.kext`            | 
-| iGPU Power Management                | ✅   | `XCPM`, enabled by [`SSDT-PM.aml`](https://github.com/Piker-Alpha/ssdtPRGen.sh) |
-| S3 Sleep/ Hibernation Mode 3         | ✅   | `SSDT-PWTK.aml` |  |   
+| iGPU Power Management                | ✅   | `XCPM`, enabled by [`SSDT-PLUG.aml`](https://github.com/Piker-Alpha/ssdtPRGen.sh) |
+| S3 Sleep/ Hibernation Mode 3         | ✅   | `SSDT-SLEEP.aml` |  |   
 | Custom Charge Threshold              | ✅   | `SSDT-EC.aml`, [YogaSMC.kext](https://github.com/zhen-zen/YogaSMC), and [YogaSMCPane](https://github.com/zhen-zen/YogaSMC)|
 | Fan Control                          | ✅   | `SSDT-EC.aml`, [YogaSMC.kext](https://github.com/zhen-zen/YogaSMC), and [YogaSMCPane](https://github.com/zhen-zen/YogaSMC)|
 | Battery Life                         | ✅   | Native, comparable to Windows/Linux. |
@@ -39,11 +39,11 @@
 
 | Feature                              | Status | Dependency          |
 | :----------------------------------- | ------ | ------------------- |
-| WiFi                                 | ✅   | `AirportBrcmFixup.kext`  |
-| Bluetooth                            | ✅   | `BrcmBluetoothInjector.kext`  |
+| WiFi                                 | ✅   | `AirportItlwm.kext`  |
+| Bluetooth                            | ✅   | `BlueToolFixup.kext`  |
 | Ethernet                             | ✅   | `IntelMausi.kext`  |
 | USB 2.0, USB 3.0                     | ✅   | `USBMap.kext`   |
-| USB Power Properties in macOS        | ✅   | `SSDT-USBX.aml` |
+| USB Power Properties in macOS        | ✅   | `SSDT-XHCI.aml` |
 
 > ### Display, TrackPad, TrackPoint, and Keyboard
 
@@ -51,7 +51,7 @@
 | :----------------------------------- | ------ | ------------------- |
 | Brightness Adjustments | ✅  | `WhateverGreen.kext`, `SSDT-PNLF.aml` and `BrightnessKeys.kext`|
 | TrackPoint             | ✅  | `VoodooPS2Controller.kext` |
-| TrackPad               | ✅  | `VoodooPS2Controller.kext` |
+| TrackPad               | ✅  | `VoodooRMI.kext` |
 | Built-in Keyboard      | ✅  | `VoodooPS2Controller.kext` |
 | Multimedia Keys        | ✅  | `BrightnessKeys.kext` and [YogaSMC](https://github.com/zhen-zen/YogaSMC) |
 
@@ -80,7 +80,7 @@ Read these before you start:
 - [dortania/ `USB map` guide](https://dortania.github.io/OpenCore-Post-Install/usb/).
 - [WhateverGreen Intel HD Manual](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md).
 - `Configuration.pdf` and `Differences.pdf` in each `OpenCore` releases.
-- [Bios mod.](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)
+
 
 </details>
 
@@ -106,13 +106,13 @@ Read these before you start:
 
 | Category  | THINKPAD X230i           |
 | --------- | ------------------------ |
-| CPU       | Intel Core i3-3110M      |
-| SSD       | 480GB                    |
+| CPU       | Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz |
+| SSD       | 250GB                    |
 | Display   | 12.5' HD (1366x768)      |
-| WiFi & BT | BCM94352HMB / DW1550     |
+| WiFi & BT | Intel(R) Dual Band Wireless-AC 8260 / Bluetooth v4.1|
 
 
-- Refer to [X230-Platform_Specifications](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) for possible stock ThinkPad X230 configurations.
+- Refer to [X260-Platform_Specifications](https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X260/ThinkPad_X260_Spec.PDF) for possible stock ThinkPad X260 configurations.
 
 </details>
 
