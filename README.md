@@ -1,71 +1,165 @@
-<!-- Name Card -->
-![x260 Hackintosh](https://cardivo.vercel.app/api?name=x260%20hackintosh&description=ThinkPad%20x260%20running%20macOS&image=https://raw.githubusercontent.com/SuhailSherief/ThinkPad-x260-macOS-OpenCore/main/screenshot/pfp.jpeg&backgroundColor=%22272E&pattern=hideout&colorPattern=%231abc9c&opacity=0.05&fontColor=%23eff4f6)
-## Specification
-Specification | Configuration
------------ | -----------
-Processor | Intel Core i7-6500U
-Integrated Graphics | Intel HD Graphics 520
-Memory | SK-Hynix 8GB DDR4
-Storage | 512GB WD Blue HDD Sata
-Wireless Card | Intel AC-8260 Dual Band + Bluetooth
-Bootloader | OpenCore
-Bootloader Ver. | v0.8.6
-## Screenshot
-<p align="center">
-  <kbd><br>M O N T E R E Y
-  <br><br>
-  <kbd><img src="https://raw.githubusercontent.com/SuhailSherief/ThinkPad-x260-macOS-OpenCore/main/screenshot/main.png"/></kbd></kbd>
-<p align="center">
-  <kbd><br>B A T T E R Y
-  <br><br>
-  <kbd><img src="https://raw.githubusercontent.com/SuhailSherief/ThinkPad-x260-macOS-OpenCore/main/screenshot/m1.png"/></kbd></kbd>
-</p>
-<p align="center">
-  <kbd><br>S T A T S
-  <br><br>
-  <kbd><img src="https://raw.githubusercontent.com/SuhailSherief/ThinkPad-x260-macOS-OpenCore/main/screenshot/m2.png"/></kbd></kbd>
-</p>
+<h1 align="center">macOS Ventura on ThinkPad X230i</h1>
 
-### Before you start
-Follow dortania guide on how to create a recovery usb for MacOS installation.
-You can find the MacOS installation guide at the following link, [`click here`](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#downloading-macos)
 
-## MacOS
-- Ventura (Tested, OpenCore)
-- Monterey (Tested, OpenCore)
-- Bigsur (Tested, OpenCore)
+#### I am not responsible for any damages you may cause.
+![Screenshot from my X230i running Ventura!](Screenshot-ventura.png)
 
-> Airportitwlm is preconfigured based on the branch you use.
-> If you face any issues try different versions. Kexts for BigSur, Monterey and Ventura already available.
-> Just Enable and Disable accordingly in config.plist.
 
-# Bios
-- `Security -> Security Chip`: **Disabled**;
-- `Memory Protection -> Execution Prevention`: **Enabled**;
-- `Virtualization -> Intel Virtualization Technology`: **Enabled**;
-- `Virtualization -> Vt-directed IO`: **Disabled**;
-- `Internal Device Access -> Bottom Cover Tamper Detection`: must be **Disabled**;
-- `Anti-Theft -> Computrace -> Current Setting`: **Disabled**;
-- `Secure Boot -> Secure Boot`: **Disabled**;
-- `UEFI/Legacy Boot`: **UEFI Only**;
-- `CSM Support`: **No**.
 
-## What's Working?
-- QE/CI Intel HD Graphics 520 `BigSur` `Monterey` `Ventura`
-- Power Management `BigSur` `Monterey` `Ventura`
-- Sleep, Shutdown, Restart `BigSur` `Monterey` `Ventura`
-- Audio Speaker & Earphone `BigSur` `Monterey` `Ventura`
-- Bluetooth `BigSur` [`Monterey`](https://github.com/SuhailSherief/ThinkPad-x260-macOS-OpenCore/issues/3) `Ventura`
-- Trackpad, Trackball, Gestures `BigSur` `Monterey` `Ventura`
-- Battery Indicator `BigSur` `Monterey` `Ventura`
-- Camera `BigSur` `Monterey` `Ventura`
-- Dock station [`BigSur` `Monterey`](https://github.com/SuhailSherief/ThinkPad-x260-macOS-OpenCore/issues/2) `Ventura`
-- etc
+> ### Non-Fuctional
 
-## Credits:
-- [Dortania](https://dortania.github.io/OpenCore-Install-Guide/)
-- [Simprecicchiani](https://github.com/simprecicchiani)
-- [WinLinMacTutorials](https://www.youtube.com/channel/UCR51utxUtFk8OJQP_bBBJsw)
-- [Vcyzteen](https://github.com/vcyzteen)
-- [r/hackintosh](https://www.reddit.com/r/hackintosh/)
-- [r/unixporn](https://github.com/racka98)
+| Feature                              | Status | Dependency          |
+| :----------------------------------- | ------ | ------------------- |
+| Fingerprint Reader                   | ❌   | `DISABLED` in BIOS to save power. |
+| Wireless WAN                         | ❌   | `DISABLED` in BIOS to save power. |
+| VGA Port                             | ❌   | Does not exist on real apple computers. |
+
+> ### Video and Audio
+
+| Feature                              | Status | Dependency          |
+| :----------------------------------- | ------ | ------------------- |
+| Full Graphics Accleration (QE/CI)    | ✅   | `WhateverGreen.kext`  |
+| Audio Recording                      | ✅   | `AppleALC.kext` with Layout ID = 55 and `SSDT-HPET.aml`   |
+| Audio Playback                       | ✅   | `AppleALC.kext` with Layout ID = 55 and `SSDT-HPET.aml`   |
+| Automatic Headphone Output Switching | ✅   | `AppleALC.kext` with Layout ID = 55 and `SSDT-HPET.aml`   |
+| Dock Audio Port                      | ✅   | `AppleALC.kext` with Layout ID = 55 and `SSDT-HPET.aml`   |
+
+> ### Power, Charge, Sleep and Hibernation
+
+| Feature                              | Status | Dependency          |
+| :----------------------------------- | ------ | ------------------- |
+| Battery Percentage Indication        | ✅   | `ECEnabler.kext`            | 
+| iGPU Power Management                | ✅   | `XCPM`, enabled by [`SSDT-PM.aml`](https://github.com/Piker-Alpha/ssdtPRGen.sh) |
+| S3 Sleep/ Hibernation Mode 3         | ✅   | `SSDT-PWTK.aml` |  |   
+| Custom Charge Threshold              | ✅   | `SSDT-EC.aml`, [YogaSMC.kext](https://github.com/zhen-zen/YogaSMC), and [YogaSMCPane](https://github.com/zhen-zen/YogaSMC)|
+| Fan Control                          | ✅   | `SSDT-EC.aml`, [YogaSMC.kext](https://github.com/zhen-zen/YogaSMC), and [YogaSMCPane](https://github.com/zhen-zen/YogaSMC)|
+| Battery Life                         | ✅   | Native, comparable to Windows/Linux. |
+
+> ### Input/ Output
+
+| Feature                              | Status | Dependency          |
+| :----------------------------------- | ------ | ------------------- |
+| WiFi                                 | ✅   | `AirportBrcmFixup.kext`  |
+| Bluetooth                            | ✅   | `BrcmBluetoothInjector.kext`  |
+| Ethernet                             | ✅   | `IntelMausi.kext`  |
+| USB 2.0, USB 3.0                     | ✅   | `USBMap.kext`   |
+| USB Power Properties in macOS        | ✅   | `SSDT-USBX.aml` |
+
+> ### Display, TrackPad, TrackPoint, and Keyboard
+
+| Feature                              | Status | Dependency          |
+| :----------------------------------- | ------ | ------------------- |
+| Brightness Adjustments | ✅  | `WhateverGreen.kext`, `SSDT-PNLF.aml` and `BrightnessKeys.kext`|
+| TrackPoint             | ✅  | `VoodooPS2Controller.kext` |
+| TrackPad               | ✅  | `VoodooPS2Controller.kext` |
+| Built-in Keyboard      | ✅  | `VoodooPS2Controller.kext` |
+| Multimedia Keys        | ✅  | `BrightnessKeys.kext` and [YogaSMC](https://github.com/zhen-zen/YogaSMC) |
+
+> ### macOS Continuity
+
+| Feature                              | Status | Dependency          |
+| :----------------------------------- | ------ | ------------------- |
+| iCloud, iMessage, FaceTime           | ❗   | Not tested  |
+| AirDrop                              | ❗   | Not tested  |
+| Time Machine                         | ✅  | Native      |
+
+</details>
+
+  
+<details>
+<summary><strong> REFERENCES </strong></summary>
+<br>
+
+Read these before you start:
+
+- [dortania's Hackintosh guides](https://github.com/dortania).
+- [dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/).
+- [dortania's OpenCore Post Install Guide](https://dortania.github.io/OpenCore-Post-Install/).
+- [dortania/ Getting Started with ACPI](https://dortania.github.io/Getting-Started-With-ACPI/).
+- [dortania/ opencore `multiboot`](https://github.com/dortania/OpenCore-Multiboot).
+- [dortania/ `USB map` guide](https://dortania.github.io/OpenCore-Post-Install/usb/).
+- [WhateverGreen Intel HD Manual](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md).
+- `Configuration.pdf` and `Differences.pdf` in each `OpenCore` releases.
+- [Bios mod.](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)
+
+</details>
+
+<details>
+<summary><strong> REQUIREMENTS </strong></summary>
+<br>
+
+- A macOS machine(optional): to create the macOS installer.
+- Flash drive, 12GB or more, for the above purpose.  
+- Xcode works fine for editing plist files on macOS, but I prefer [PlistEdit Pro](https://www.fatcatsoftware.com/plisteditpro/).  
+- [ProperTree](https://github.com/corpnewt/ProperTree) if you need to edit plist files on Windows.  
+- [MaciASL](https://github.com/acidanthera/MaciASL), for patching ACPI tables and editing ACPI patches.
+- [MountEFI](https://github.com/corpnewt/MountEFI) to quickly mount EFI partitions.  
+- [IORegistryExplorer](https://developer.apple.com/downloads), for diagnosis.  
+- [Hackintool](https://www.insanelymac.com/forum/topic/335018-hackintool-v286/), for diagnostic ONLY, Hackintool should not be used for patching, it is outdated.
+- Patience and time, especially if this is your first time Hackintosh-ing.
+
+</details>
+
+<details>
+<summary><strong> HARDWARE </strong></summary>
+<br>
+
+| Category  | THINKPAD X230i           |
+| --------- | ------------------------ |
+| CPU       | Intel Core i3-3110M      |
+| SSD       | 480GB                    |
+| Display   | 12.5' HD (1366x768)      |
+| WiFi & BT | BCM94352HMB / DW1550     |
+
+
+- Refer to [X230-Platform_Specifications](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) for possible stock ThinkPad X230 configurations.
+
+</details>
+
+<details>
+<summary><strong> BIOS </strong></summary>
+<br>  
+  
+| Category       |                     |
+| -------------- | ----------------------------------- |
+| Version        | G2ETB7WW (2.77) - mod version       |
+| Serial ATA     | AHCI                                |
+| IO Port Access | Disabled: WiMAX, Fingerprint reader |
+| Secure Boot    | Disabled                            |
+| Fingerprint    | Predesktop Authentication: Disabled |
+| Boot           | UEFI Only (CSM Support: No)         |
+| Bootloader     | OC-0.9.9                            |
+
+</details>
+
+<details>
+<summary><strong> GETTING STARTED </strong></summary>
+<br>
+
+Before you do anything, please familiarize yourself with basic Hackintosh terminologies and the basic Hackintosh process by throughly reading Dortania guides as linked in `REFERENCES`
+
+- Creating a macOS installer: refer to [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
+- [**README-HARDWARE**](/Other/README_HARDWARE.md): Requirements before installing.
+- [**README-OTHERS**](/Other/README_OTHERS.md): for post installation settings and other remarks.
+
+</details>
+
+<details>
+<summary><strong> POST-INSTALLATION </strong></summary>
+<br>
+
+- Turn off touchpad in Bios.
+
+</details>
+
+
+# Credits
+
+- [Apple](https://www.apple.com) for macOS.
+- [Acidanthera](https://github.com/acidanthera) for all the kexts/utilities that they made.
+- [Rehabman](https://github.com/RehabMan) and [Daliansky](https://github.com/daliansky) for the patches and guides and kexts.
+- [George Kushnir](https://github.com/n4ru) for modified BIOS.
+- [Dortania](https://github.com/dortania) for for the OpenCore Install Guide.
+- [simprecicchiani](https://github.com/simprecicchiani) for inspirational ThinkPad configurations.
+- [zhen-zen](https://github.com/zhen-zen) for **YogaSMC**.
+- Theme for Opencanopy:  https://github.com/82ghost82/BigSurFlat
