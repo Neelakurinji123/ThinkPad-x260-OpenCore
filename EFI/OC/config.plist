@@ -419,7 +419,7 @@
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                     <key>Find</key>
                     <data>Cg0KAw==</data>
                     <key>Limit</key>
@@ -449,7 +449,7 @@
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                     <key>Find</key>
                     <data>Cg0KBA==</data>
                     <key>Limit</key>
@@ -1716,7 +1716,7 @@
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>keepsyms=1 ipc_control_port_options=0 -disable_sidecar_mac</string>
+                    <string>keepsyms=1 ipc_control_port_options=0 -disable_sidecar_mac darkwake=0</string>
                     <key>csr-active-config</key>
                     <data>AwgAAA==</data>
                     <key>prev-lang:kbd</key>
