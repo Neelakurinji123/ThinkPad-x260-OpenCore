@@ -32,7 +32,7 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string>X86 Injector</string>
+                    <string>USB power fixup</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
@@ -56,7 +56,7 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string>Notebook brightness fixup</string>
+                    <string>Laptop brightness fixup</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
@@ -109,22 +109,6 @@
                     <true/>
                     <key>Path</key>
                     <string>SSDT-THINK.aml</string>
-                </dict>
-                <dict>
-                    <key>Comment</key>
-                    <string></string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>Path</key>
-                    <string>SSDT-UTILS.aml</string>
-                </dict>
-                <dict>
-                    <key>Comment</key>
-                    <string></string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>Path</key>
-                    <string>SSDT-AC.aml</string>
                 </dict>
                 <dict>
                     <key>Comment</key>
@@ -269,7 +253,7 @@
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
-                    <true/>
+                    <false/>
                     <key>Find</key>
                     <data>X1BUUwE=</data>
                     <key>Limit</key>
@@ -415,7 +399,7 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>SLEEP: GRPW(2,N) to ZRPW</string>
+                    <string>SLEEP: GPRW(2,N) to ZPRW</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
@@ -475,21 +459,21 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>HPET _STA to XSTA Rename</string>
+                    <string>SLEEP: _PTS(1,N) to ZPTS</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                     <key>Find</key>
-                    <data>AQMUH19TVEE=</data>
+                    <data>X1BUUw==</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
                     <data></data>
                     <key>OemTableId</key>
-                    <data>AAAAAA==</data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>AQMUH1hTVEE=</data>
+                    <data>WlBUUw==</data>
                     <key>ReplaceMask</key>
                     <data></data>
                     <key>Skip</key>
@@ -497,7 +481,7 @@
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data>AAAAAA==</data>
+                    <data>RFNEVA==</data>
                 </dict>
                 <dict>
                     <key>Base</key>
@@ -505,21 +489,21 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>HPET _CRS to XCRS Rename</string>
+                    <string>0D-03 to 00</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
                     <false/>
                     <key>Find</key>
-                    <data>IF9DUlM=</data>
+                    <data>Cg0KAw==</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
                     <data></data>
                     <key>OemTableId</key>
-                    <data>AAAAAA==</data>
+                    <data></data>
                     <key>Replace</key>
-                    <data>IFhDUlM=</data>
+                    <data>Cg0KAA==</data>
                     <key>ReplaceMask</key>
                     <data></data>
                     <key>Skip</key>
@@ -527,7 +511,37 @@
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data>AAAAAA==</data>
+                    <data></data>
+                </dict>
+                <dict>
+                    <key>Base</key>
+                    <string></string>
+                    <key>BaseSkip</key>
+                    <integer>0</integer>
+                    <key>Comment</key>
+                    <string>0D-04 to 00</string>
+                    <key>Count</key>
+                    <integer>0</integer>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Find</key>
+                    <data>Cg0KBA==</data>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
+                    <data></data>
+                    <key>OemTableId</key>
+                    <data></data>
+                    <key>Replace</key>
+                    <data>Cg0KAA==</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                    <key>TableLength</key>
+                    <integer>0</integer>
+                    <key>TableSignature</key>
+                    <data></data>
                 </dict>
             </array>
             <key>Quirks</key>
@@ -1260,24 +1274,6 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>AirportItlwm_BigSur.kext</string>
-                    <key>Comment</key>
-                    <string>V2.1.0 | Wifi</string>
-                    <key>Enabled</key>
-                    <false/>
-                    <key>ExecutablePath</key>
-                    <string>Contents/MacOS/AirportItlwm</string>
-                    <key>MaxKernel</key>
-                    <string>20.99.00</string>
-                    <key>MinKernel</key>
-                    <string>20.0.0</string>
-                    <key>PlistPath</key>
-                    <string>Contents/Info.plist</string>
-                </dict>
-                <dict>
-                    <key>Arch</key>
-                    <string>Any</string>
-                    <key>BundlePath</key>
                     <string>AirportItlwm_Ventura.kext</string>
                     <key>Comment</key>
                     <string>V2.2.0 | Wifi</string>
@@ -1596,7 +1592,7 @@
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>keepsyms=1 ipc_control_port_options=0 -disable_sidecar_mac darkwake=0</string>
+                    <string>keepsyms=1 ipc_control_port_options=0 -disable_sidecar_mac</string>
                     <key>csr-active-config</key>
                     <data>AwgAAA==</data>
                     <key>prev-lang:kbd</key>
@@ -1669,13 +1665,13 @@
                 <key>AdviseFeatures</key>
                 <true/>
                 <key>MLB</key>
-                <string>C17733501CDHMHK1H</string>
+                <string>C177313014NHMHKAD</string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
                 <integer>0</integer>
                 <key>ROM</key>
-                <data>6CGpEG3k</data>
+                <data>gSMk9189</data>
                 <key>SpoofVendor</key>
                 <true/>
                 <key>SystemMemoryStatus</key>
@@ -1683,9 +1679,9 @@
                 <key>SystemProductName</key>
                 <string>MacBookPro13,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C17V7SYEGVC1</string>
+                <string>C17V54Z7GVC1</string>
                 <key>SystemUUID</key>
-                <string>11802F84-CBE0-4363-BC1C-9777E97D8235</string>
+                <string>A970FDB6-86D5-4DF9-93E6-0702C338DF8F</string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
