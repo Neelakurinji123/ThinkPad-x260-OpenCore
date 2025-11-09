@@ -2,7 +2,7 @@
 
 
 #### I am not responsible for any damages you may cause.
-![Screenshot from my X260 running Ventura!](Screenshot-ventura.png)
+![Screenshot from my X260 running Ventura!](Screenshot-sonoma.png)
 
 
 
@@ -148,7 +148,7 @@ Before you do anything, please familiarize yourself with basic Hackintosh termin
 <summary><strong> POST-INSTALLATION </strong></summary>
 <br>
 
-- Turn off touchpad in Bios.
+- Generate SMBIOS: https://github.com/corpnewt/GenSMBIOS
 
 </details>
 
