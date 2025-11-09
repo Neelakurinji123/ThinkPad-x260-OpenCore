@@ -1,4 +1,4 @@
-<h1 align="center">macOS Ventura on ThinkPad X260</h1>
+<h1 align="center">macOS Sonoma on ThinkPad X260</h1>
 
 
 #### I am not responsible for any damages you may cause.
