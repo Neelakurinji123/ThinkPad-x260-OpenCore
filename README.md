@@ -1,8 +1,8 @@
-<h1 align="center">macOS Sonoma on ThinkPad X260</h1>
+<h1 align="center">macOS Sequoia on ThinkPad X260</h1>
 
 
 #### I am not responsible for any damages you may cause.
-![Screenshot from my X260 running Ventura!](Screenshot-sonoma.png)
+![Screenshot from my X260 running Sequoia!](Screenshot-Sequoia)
 
 
 
