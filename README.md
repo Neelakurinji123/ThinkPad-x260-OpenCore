@@ -2,7 +2,7 @@
 
 
 #### I am not responsible for any damages you may cause.
-![Screenshot from my X260 running Sequoia!](Screenshot-Sequoia)
+![Screenshot from my X260 running Sequoia!](Screenshot-Sequoia.png)
 
 
 
