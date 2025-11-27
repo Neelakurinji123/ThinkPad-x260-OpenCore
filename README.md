@@ -31,8 +31,6 @@
 | Battery Percentage Indication        | ✅   | `ECEnabler.kext`            | 
 | iGPU Power Management                | ✅   | `XCPM`, enabled by [`SSDT-PLUG.aml`](https://github.com/Piker-Alpha/ssdtPRGen.sh) |
 | S3 Sleep/ Hibernation Mode 3         | ✅   | `SSDT-SLEEP.aml` |  |   
-| Custom Charge Threshold              | ✅   | `SSDT-EC.aml`, [YogaSMC.kext](https://github.com/zhen-zen/YogaSMC), and [YogaSMCPane](https://github.com/zhen-zen/YogaSMC)|
-| Fan Control                          | ✅   | `SSDT-EC.aml`, [YogaSMC.kext](https://github.com/zhen-zen/YogaSMC), and [YogaSMCPane](https://github.com/zhen-zen/YogaSMC)|
 | Battery Life                         | ✅   | Native, comparable to Windows/Linux. |
 
 > ### Input/ Output
@@ -53,7 +51,7 @@
 | TrackPoint             | ✅  | `VoodooPS2Controller.kext` |
 | TrackPad               | ✅  | `VoodooRMI.kext` |
 | Built-in Keyboard      | ✅  | `VoodooPS2Controller.kext` |
-| Multimedia Keys        | ✅  | `BrightnessKeys.kext` and [YogaSMC](https://github.com/zhen-zen/YogaSMC) |
+| Multimedia Keys        | ✅  | `BrightnessKeys.kext`|
 
 > ### macOS Continuity
 
@@ -128,7 +126,7 @@ Read these before you start:
 | Secure Boot    | Disabled                            |
 | Fingerprint    | Predesktop Authentication: Disabled |
 | Boot           | UEFI Only (CSM Support: No)         |
-| Bootloader     | OC-0.9.9                            |
+| Bootloader     | OC-1.0.6                            |
 
 </details>
 
