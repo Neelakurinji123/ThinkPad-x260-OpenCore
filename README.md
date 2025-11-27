@@ -147,6 +147,7 @@ Before you do anything, please familiarize yourself with basic Hackintosh termin
 <br>
 
 - Generate SMBIOS: https://github.com/corpnewt/GenSMBIOS
+- Apply root patch with [OCLP-Mod](https://github.com/laobamac/OCLP-Mod) for Wifi
 
 </details>
 
